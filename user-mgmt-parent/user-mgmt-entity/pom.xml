@@ -1,0 +1,28 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.opt</groupId>
+		<artifactId>user-mgmt-parent</artifactId>
+		<version>1.0</version>
+	</parent>
+	<groupId>com.opt.entity</groupId>
+	<artifactId>user-mgmt-entity</artifactId>
+	<name>User Management Entity</name>
+	<dependencies>
+		<dependency>
+			<groupId>com.opt.common</groupId>
+			<artifactId>user-mgmt-common</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>jakarta.persistence</groupId>
+			<artifactId>jakarta.persistence-api</artifactId>
+		</dependency>
+	</dependencies>
+</project>

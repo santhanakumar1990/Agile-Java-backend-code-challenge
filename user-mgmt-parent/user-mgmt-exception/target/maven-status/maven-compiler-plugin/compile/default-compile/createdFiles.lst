@@ -1,0 +1,5 @@
+com\opt\exception\EmailAlreadyExistsException.class
+com\opt\exception\handler\UserWebserviceExceptionHandler.class
+com\opt\exception\UserAlreadyExistsException.class
+com\opt\exception\SQLOperationException.class
+com\opt\exception\UserNotFoundException.class
