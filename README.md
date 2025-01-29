@@ -54,3 +54,74 @@ Extra optional features (only if you are done with the previous features):
 
 Please, as an integral part of the challenge, update this document or add another one with the instructions required to build, run or test the project. As an example, if any external database is required, provide the required steps to prepare it beforehand, using docker or any other solution if possible, although using an integrated in memory database is preferred for simplicity.
 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## Implementations - Santhanakumar validate
+
+As per the instructions created the microservice user-mgmt and commited in the branch https://github.com/santhanakumar1990/Agile-Java-backend-code-challenge/tree/main/user-mgmt-parent
+
+Below are some points taken while implementing the microservice
+
+## Multimodule project
+
+The entire requirement splited to different modules to segregate components only with certain required libraries.
+
+* user-mgmt-dto - Contains application dtos
+* user-mgmt-entity - Contains jpa entities and repositories
+* user-mgmt-exception - Contains custom exception and spring exception handler
+* user-mgmt-client - Contains application controller and business class interfaces
+* user-mgmt-server - Contains implementations
+* user-mgmt-boot - Used to startup the appplication
+
+## Libraries Used
+
+* lombok - To generate getter setters
+* mapstruct - To convert entity to DTO and DTO to entity by implementing mappers.
+* swagger-openapi - To provide swagger documentation
+
+## End points
+
+Created following endpoints with Spring MVC using better coding standars and solid principles
+
+* */api/users/ (GET)*: return the list of all users.
+* */api/users/{username}/ (GET)*: return a single user.
+* */api/users/ (POST)*: create a user.
+* */api/users/{username}/ (DELETE)*: delete a single user.
+ 
+## Input validations
+
+* Used spring validations to validate the input payload request in the crate user endpoints.
+* Based on the validated result will throw the custom exception with appropriate error message and exceptions
+
+## Logging
+* Used slf4j with lombok library for logging method activities. 
+* Info and debug level used. Info is default and for debug we need to enable debug
+
+## Commenting
+* Added comments on controller and service classes with information about operation, input params, return, exception type
+
+## Swagger documentation
+* Added swagger documentation for all 4 end points with endpoint descriptions such as Operation, response code, response code description
+
+URL : http://localhost:8081/user-management/swagger-ui/index.html
+
+## Database and profiling
+* Added spring profiling with memory database and postgres database configurations
+* Activated profile configuration will be taken for database connectivity
+
+## Unit testing
+* Added Unit test cases for Service class methods
+
+## Exception Handling
+* Used spring exception handler using @ControllerAdvice which will catch all the custom exceptions and will handle by returning specific status code and responses
+
+* * EmailAlreadyExistsException
+* * MethodArguementException
+* * UserAlreadyExistsException
+* * UserNotFoundException
+
+
+
+
+
